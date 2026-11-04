@@ -1,0 +1,435 @@
+
+/* 1. Basic settings */
+:root {
+    --green: #075B3A;
+    --dark-green: #043D29;
+    --gold: #D9AD50;
+    --white: #FFFFFF;
+    --light: #F4F7F4;
+    --text: #24332B;
+    --muted: #65736A;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    line-height: 1.7;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: min(1120px, 90%);
+    margin: 0 auto;
+}
+
+.section {
+    padding: 85px 0;
+}
+
+.section h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+    margin: 12px 0 20px;
+}
+
+.section-label,
+.eyebrow {
+    color: var(--gold);
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.section-intro {
+    max-width: 720px;
+    color: var(--muted);
+}
+
+/* 2. Navigation */
+.header {
+    background: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 18px rgba(0, 0, 0, 0.07);
+}
+
+.navbar {
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--dark-green);
+    font-weight: 800;
+    font-size: 0.95rem;
+}
+
+.party-logo {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+}
+
+#navigation {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+#navigation a {
+    color: var(--text);
+    font-weight: 600;
+    font-size: 0.92rem;
+}
+
+#navigation a:hover {
+    color: var(--green);
+}
+
+.menu-toggle {
+    display: none;
+    border: 0;
+    background: var(--green);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 1.35rem;
+    cursor: pointer;
+}
+
+/* 3. Hero section */
+.hero {
+    background: linear-gradient(
+        120deg,
+        var(--dark-green),
+        var(--green)
+    );
+    color: var(--white);
+    padding: 75px 0;
+    overflow: hidden;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.hero-text h1 {
+    font-size: clamp(2.8rem, 5.5vw, 5rem);
+    line-height: 1.04;
+    margin: 22px 0;
+    letter-spacing: -2px;
+}
+
+.hero-text h1 span {
+    display: block;
+    color: var(--gold);
+}
+
+.hero-text h2 {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.hero-text > p:not(.eyebrow):not(.location) {
+    color: #E1ECE5;
+    max-width: 520px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: var(--gold);
+    color: #18271D;
+}
+
+.btn-primary:hover {
+    background: #E9C36D;
+}
+
+.btn-outline {
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+}
+
+.btn-outline:hover {
+    background: #FFFFFF;
+    color: var(--green);
+}
+
+.location {
+    color: #D4E4DA;
+    margin-top: 24px;
+    font-size: 0.88rem;
+}
+
+.hero-image {
+    position: relative;
+    max-width: 450px;
+    justify-self: center;
+    width: 100%;
+}
+
+.hero-image > img {
+    width: 100%;
+    height: 510px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 180px 180px 12px 12px;
+    border: 4px solid rgba(255, 255, 255, 0.75);
+    background: #E4E9E5;
+}
+
+.image-caption {
+    position: absolute;
+    bottom: 18px;
+    left: 18px;
+    right: 18px;
+    padding: 15px 18px;
+    background: rgba(4, 61, 41, 0.94);
+    border-left: 4px solid var(--gold);
+    border-radius: 4px;
+}
+
+.image-caption strong,
+.image-caption span {
+    display: block;
+}
+
+.image-caption span {
+    color: #D4E4DA;
+    font-size: 0.88rem;
+}
+
+/* 4. About section */
+.about {
+    background: var(--white);
+}
+
+/* 5. Campaign priorities */
+.priorities {
+    background: var(--light);
+}
+
+.priority-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 38px;
+}
+
+.priority-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    border-bottom: 4px solid var(--gold);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.05);
+}
+
+.priority-number {
+    color: var(--green);
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+.priority-card h3 {
+    margin: 14px 0 10px;
+    color: var(--dark-green);
+    font-size: 1.3rem;
+}
+
+.priority-card p {
+    color: var(--muted);
+}
+
+/* 6. Campaign call to action */
+.campaign {
+    text-align: center;
+    color: var(--white);
+    background: var(--dark-green);
+}
+
+.campaign-content {
+    max-width: 760px;
+}
+
+.campaign h2 {
+    color: var(--gold);
+}
+
+.campaign-content > p:not(.section-label) {
+    margin-bottom: 25px;
+    color: #E1ECE5;
+}
+
+/* 7. Contact section */
+.contact {
+    background: var(--white);
+}
+
+.contact-note {
+    color: var(--muted);
+    margin-top: 12px;
+}
+
+/* 8. Footer */
+.footer {
+    background: #022D1E;
+    color: #E1ECE5;
+    text-align: center;
+    padding: 28px 0;
+    font-size: 0.88rem;
+}
+
+.footer p + p {
+    margin-top: 5px;
+}
+
+/* 9. Responsive design for tablets and phones */
+@media (max-width: 850px) {
+    .navbar {
+        min-height: 75px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    #navigation {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        right: 0;
+        padding: 22px 5%;
+        background: var(--white);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    #navigation.open {
+        display: flex;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 42px;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-text > p:not(.eyebrow):not(.location) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        max-width: 390px;
+    }
+
+    .hero-image > img {
+        height: 450px;
+    }
+
+    .priority-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand {
+        font-size: 0.78rem;
+        gap: 8px;
+    }
+
+    .party-logo {
+        width: 42px;
+        height: 42px;
+    }
+
+    .hero {
+        padding: 55px 0;
+    }
+
+    .hero-text h1 {
+        letter-spacing: -1px;
+    }
+
+    .hero-text h2 {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        text-align: center;
+    }
+
+    .hero-image > img {
+        height: 400px;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .priority-card {
+        padding: 24px;
+    }
+}
